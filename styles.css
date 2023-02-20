@@ -1,0 +1,16 @@
+body{
+    background-color: wheat;
+}
+
+.flex{
+    font-size: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    color:black;
+}
+#output{
+    font-size: 35px;
+    width: 90%;
+    height: 40px;
+}
