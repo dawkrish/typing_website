@@ -18,7 +18,8 @@ let current_input_letter = ""
 let current_input_word = ""
 let current_testing_letter = ""
 let current_testing_word = ""
-
+let a_word = ""
+let b_word = ""
 
 
 let input_arr = sentence.split(" ")
@@ -26,13 +27,11 @@ wording()
 
 function foo(a){
     
-    // console.log("letter count > "+letter_count)
-    
     current_string = a.value
     current_input_letter = current_string[current_string.length - 1]
     current_testing_letter = input.childNodes[word_count].innerHTML[letter_count]
     current_testing_word =  input.childNodes[word_count]
-
+    
 
     if(current_input_letter == " "){
         a.value = ""
@@ -40,9 +39,16 @@ function foo(a){
         word_count +=1 
     }
     else{
-        if(current_input_letter == current_testing_letter){
+        // if(current_input_letter == current_testing_letter){
+        //     current_testing_word.style.backgroundColor = "gray"
+        // }
+        console.log(partOfWord(current_string,letter_count+1))
+        console.log(partOfWord(current_testing_word.innerText,letter_count+1))
+
+        if(partOfWord(current_string,letter_count+1) == partOfWord(current_testing_word.innerText, letter_count+1)){
             current_testing_word.style.backgroundColor = "gray"
         }
+
         if(current_input_letter != current_testing_letter){
             current_testing_word.style.backgroundColor = "red"
         }
@@ -65,8 +71,16 @@ function wording(){
 window.addEventListener('keydown',(e)=>{
     if(e.key == "Backspace"){
         if(letter_count > 0){
-            console.log('letter count decreased !')
-            letter_count -= 2
+            letter_count -= 2     
         }
     }
 })
+
+function partOfWord(stringa,index){
+    let text = stringa
+    text = text.slice(0,index)
+    return text
+}
+
+// let cc = "hello"
+// console.log(partOfWord(cc,3))
