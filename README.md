@@ -1,1 +1,1 @@
-(DEM0)[]
+(DEM0)[https://kichi-typing.netlify.app]
