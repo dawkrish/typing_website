@@ -1036,6 +1036,9 @@ let input_arr = sentence.split(" ")
 wording()
 
 function foo(a){
+    if(word_count == num_of_words){
+        return
+    }
     if(keys_pressed <= 1){
         secs = 0
     }
@@ -1057,6 +1060,7 @@ function foo(a){
         word_count +=1 
         console.log(word_count)
     }
+  
     else{
         if(partOfWord(current_string,letter_count+1) == partOfWord(current_testing_word.innerText, letter_count+1)){
             current_testing_word.style.backgroundColor = "gray"
@@ -1101,7 +1105,7 @@ let secs = 0
 let timer_interval = setInterval(timer_fn,1000)
 function timer_fn(){
     if(keys_pressed >= 1){
-        if(word_count == num_of_words){ 
+        if(word_count >= num_of_words){ 
             clearInterval(timer_interval)
             result_display.style.display = "flex"
             let _words = keys_pressed / 5
