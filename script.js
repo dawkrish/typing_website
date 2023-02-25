@@ -1112,17 +1112,16 @@ function timer_fn(){
     
             output.style.display = "none"
             timer.style.display = "none"
-            result_display.innerHTML= `<span class="res">Number of Words : ${num_of_words}</span>
-                                        <br>
+            result_display.innerHTML= `
                                         <span class="res">Time Taken : ${secs} secs</span>
                                         <br>
                                         <span class="res">WPM : ${Math.round(acc_speed * 100)/100} </span>
                                         <br>
                                         <span class="res">Accuracy : ${Math.round(accuracy)} %</span>
                                         <br>
-                                        <span class="res">Incorrect KeyStrokes : ${incorrect_letters}</span>
+                                        <span class="res">KeyStrokes : ${incorrect_letters}/${keys_pressed}</span>
                                         <br>
-                                        <span class="res">Incorrect words : ${incorrect_words}</span>`
+                                        <span class="res">Words : ${incorrect_words}/${num_of_words}</span>`
             console.log('interval closed !')
             return
         }
