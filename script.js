@@ -1036,6 +1036,9 @@ let input_arr = sentence.split(" ")
 wording()
 
 function foo(a){
+    if(keys_pressed <= 1){
+        secs = 0
+    }
     keys_pressed += 1
     current_string = a.value
     current_input_letter = current_string[current_string.length - 1]
@@ -1096,34 +1099,37 @@ function partOfWord(stringa,index){
 let secs = 0
 let timer_interval = setInterval(timer_fn,1000)
 function timer_fn(){
-    if(word_count == num_of_words){ 
-        clearInterval(timer_interval)
-        result_display.style.display = "flex"
-        let _words = keys_pressed / 5
-        let raw_speed = (_words * 60 ) / secs
-
-        let accuracy = ((keys_pressed-incorrect_letters) * 100) / keys_pressed
-        let acc_speed = (accuracy * raw_speed)/100
-
-        output.style.display = "none"
-        timer.style.display = "none"
-        result_display.innerHTML= `<span class="res">Number of Words : ${num_of_words}</span>
-                                    <br>
-                                    <span class="res">Time Taken : ${secs} secs</span>
-                                    <br>
-                                    <span class="res">WPM : ${Math.round(acc_speed * 100)/100} </span>
-                                    <br>
-                                    <span class="res">Accuracy : ${Math.round(accuracy)} %</span>
-                                    <br>
-                                    <span class="res">Incorrect KeyStrokes : ${incorrect_letters}</span>
-                                    <br>
-                                    <span class="res">Incorrect words : ${incorrect_words}</span>`
-        console.log('interval closed !')
-        return
+    if(keys_pressed >= 1){
+        if(word_count == num_of_words){ 
+            clearInterval(timer_interval)
+            result_display.style.display = "flex"
+            let _words = keys_pressed / 5
+            let raw_speed = (_words * 60 ) / secs
+    
+            let accuracy = ((keys_pressed-incorrect_letters) * 100) / keys_pressed
+            let acc_speed = (accuracy * raw_speed)/100
+    
+            output.style.display = "none"
+            timer.style.display = "none"
+            result_display.innerHTML= `<span class="res">Number of Words : ${num_of_words}</span>
+                                        <br>
+                                        <span class="res">Time Taken : ${secs} secs</span>
+                                        <br>
+                                        <span class="res">WPM : ${Math.round(acc_speed * 100)/100} </span>
+                                        <br>
+                                        <span class="res">Accuracy : ${Math.round(accuracy)} %</span>
+                                        <br>
+                                        <span class="res">Incorrect KeyStrokes : ${incorrect_letters}</span>
+                                        <br>
+                                        <span class="res">Incorrect words : ${incorrect_words}</span>`
+            console.log('interval closed !')
+            return
+        }
+    
+        timer.innerText = secs
+        secs += 1
     }
-
-    timer.innerText = secs
-    secs += 1
+    
 }
 
 
