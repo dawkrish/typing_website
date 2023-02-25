@@ -1125,9 +1125,9 @@ function timer_fn(){
             console.log('interval closed !')
             return
         }
-    
-        timer.innerText = secs
         secs += 1
+        timer.innerText = secs
+        
     }
     
 }
