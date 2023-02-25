@@ -1050,6 +1050,7 @@ function foo(a){
         if(a.value.slice(0,-1)  != current_testing_word.innerHTML){
             current_testing_word.style.backgroundColor = "red"
             incorrect_words += 1
+            incorrect_letters += 1
         }
         a.value = ""
         letter_count = -1
