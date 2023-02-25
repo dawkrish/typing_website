@@ -1098,7 +1098,7 @@ let timer_interval = setInterval(timer_fn,1000)
 function timer_fn(){
     if(word_count == num_of_words){ 
         clearInterval(timer_interval)
-        result_display.style.display = "block"
+        result_display.style.display = "flex"
         let _words = keys_pressed / 5
         let raw_speed = (_words * 60 ) / secs
 

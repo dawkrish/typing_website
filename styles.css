@@ -8,7 +8,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     column-gap: 10px;
-    row-gap: 10px;
+    row-gap: 7px;
     color:black;
 
 }
@@ -24,11 +24,17 @@ body{
     font-size: large;
 }
 
+#result{
+    display: flex;
+    flex-direction: column;
+}
 #time{
+    font-size: 25px;
     background-color: orange;
     padding: 5px;
 }
 .res{
+    font-size: 35px;
     background-color: aqua;
     padding: 4px;
 }
