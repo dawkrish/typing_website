@@ -25,6 +25,7 @@ body{
 }
 
 #result{
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
@@ -35,6 +36,6 @@ body{
 }
 .res{
     font-size: 35px;
-    background-color: aqua;
+    background-color: #B4E4FF;
     padding: 4px;
 }

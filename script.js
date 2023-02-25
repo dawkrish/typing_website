@@ -1136,3 +1136,11 @@ function getRandomItem(arr) {
 resetBtn.addEventListener('click',()=>{
     window.location.reload()
 })
+
+let ref_key_arr = []
+let tab_pressed = 0
+window.addEventListener('keydown',(e)=>{
+    if(e.keyCode == 9){
+        resetBtn.click()
+    }
+})
