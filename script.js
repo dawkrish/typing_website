@@ -1119,9 +1119,9 @@ function timer_fn(){
                                         <br>
                                         <span class="res">Accuracy : ${Math.round(accuracy)} %</span>
                                         <br>
-                                        <span class="res">KeyStrokes : ${incorrect_letters}/${keys_pressed}</span>
+                                        <span class="res">KeyStrokes : ${keys_pressed - incorrect_letters}/${keys_pressed}</span>
                                         <br>
-                                        <span class="res">Words : ${incorrect_words}/${num_of_words}</span>`
+                                        <span class="res">Words : ${num_of_words - incorrect_words}/${num_of_words}</span>`
             console.log('interval closed !')
             return
         }
