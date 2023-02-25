@@ -1,12 +1,14 @@
 body{
     background-color: wheat;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .flex{
     font-size: 40px;
     display: flex;
     flex-wrap: wrap;
-    column-gap: 5px;
+    column-gap: 10px;
+    row-gap: 10px;
     color:black;
 
 }
@@ -14,4 +16,19 @@ body{
     font-size: 35px;
     width: 90%;
     height: 40px;
+}
+.word{
+    padding: 4px;
+}
+#reset{
+    font-size: large;
+}
+
+#time{
+    background-color: orange;
+    padding: 5px;
+}
+.res{
+    background-color: aqua;
+    padding: 4px;
 }
